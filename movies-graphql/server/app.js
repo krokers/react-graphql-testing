@@ -8,7 +8,8 @@ const app = express();
 app.use(tracing)
 
 //middleWare
-mongoose.connect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0-cmmr3.mongodb.net/test?retryWrites=true&w=majority`);
+// mongoose.connect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0-cmmr3.mongodb.net/test?retryWrites=true&w=majority`);
+mongoose.connect(`mongodb://mongo:27017/docker-node-mongo`);
 mongoose.connection.once('open', () => {
     console.log('Connected to mLab cloud database')
 })
